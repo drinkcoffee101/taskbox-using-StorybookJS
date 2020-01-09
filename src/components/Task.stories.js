@@ -2,6 +2,7 @@ import React from "react";
 // 'action' -  allows us to create a callback that appears in the actions panel of the Storybook UI when clicked
 // help you verify interactions when building UI components in isolation.
 import { action } from "@storybook/addon-actions";
+import { withKnobs, object } from "@storybook/addon-knobs/react";
 
 import Task from './Task'
 
@@ -9,6 +10,7 @@ import Task from './Task'
 export default {
     component: Task,
     title: 'Task',
+    decorators: [withKnobs],
     // Our exports that end in "Data" are not stories.
     excludeStories: /.*Data$/
 }
@@ -26,7 +28,7 @@ export const actionsData = {
 }
 
 //Story 1
-export const Default = () => <Task task={{ ...taskData }} {...actionsData} />
+export const Default = () => <Task task={object('task', { ...taskData })} {...actionsData} />
 //Story 2
 export const Pinned = () => <Task task={{ ...taskData, state: 'TASK_PINNED' }} {...actionsData} />
 //Story 3
