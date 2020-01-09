@@ -6,7 +6,7 @@ import TaskList from "./TaskList";
 
 //never render container components anywhere in your app except at the highest level and instead pass all data-requirements down the component hierarchy
 
-export function PureIndoxScreen({ error }) {
+export function PureInboxScreen({ error }) {
     if (error) {
         return (
             <div className="page lists-show">
