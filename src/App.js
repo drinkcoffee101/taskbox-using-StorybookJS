@@ -15,3 +15,6 @@ class App extends Component {
 }
 
 export default App;
+
+// if something breaks with the storybook try 
+//'yarn upgrade interactive --latest'
